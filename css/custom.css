@@ -1,0 +1,168 @@
+/* ============================================================
+   Spotlight-Photographie – Custom CSS
+   Ergänzung zu Tailwind CDN
+   ============================================================ */
+
+/* --- Scroll-Reveal ----------------------------------------- */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-on-scroll.delay-1 { transition-delay: 0.1s; }
+.reveal-on-scroll.delay-2 { transition-delay: 0.2s; }
+.reveal-on-scroll.delay-3 { transition-delay: 0.3s; }
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll,
+  .reveal-on-scroll.delay-1,
+  .reveal-on-scroll.delay-2,
+  .reveal-on-scroll.delay-3 {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* --- Hero Animations --------------------------------------- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0) translateX(-50%); }
+  50%       { transform: translateY(8px) translateX(-50%); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+.animate-scroll-bounce {
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+/* --- Custom Scrollbar -------------------------------------- */
+:root {
+  scrollbar-width: thin;
+  scrollbar-color: #A3AC94 transparent;
+}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background-color: #A3AC94;
+  border-radius: 3px;
+}
+
+/* --- Gallery Masonry --------------------------------------- */
+#gallery {
+  column-fill: balance;
+}
+.gallery-item {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* Gallery Filter Transition */
+.gallery-item {
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+.gallery-item.hidden-item {
+  display: none;
+}
+
+/* Filter Button Active State */
+.filter-btn.active {
+  background-color: #3D4A35;
+  color: #FAFAF7;
+  border-color: #3D4A35;
+}
+
+/* --- Lightbox --------------------------------------------- */
+#lightbox {
+  display: none;
+}
+#lightbox.open {
+  display: flex;
+}
+
+/* --- Navbar Scroll State ---------------------------------- */
+#navbar {
+  transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out, backdrop-filter 0.3s ease-out;
+}
+#navbar.scrolled {
+  background-color: rgba(250, 250, 247, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 2px 20px rgba(45, 56, 40, 0.06);
+}
+
+/* --- Mobile Menu ------------------------------------------ */
+#mobile-menu {
+  display: none;
+}
+#mobile-menu.open {
+  display: block;
+}
+
+/* --- Contact Form ----------------------------------------- */
+.form-field:focus-within label {
+  color: #3D4A35;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #5A6450;
+  background-color: #FFFFFF;
+}
+
+/* Webkit date input styling */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+/* --- Decorative About Frame ------------------------------- */
+.about-frame::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  right: 12px;
+  bottom: -12px;
+  border: 1px solid #C8CEBD;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* --- Smooth Scroll Offset for Fixed Nav ------------------- */
+:target {
+  scroll-margin-top: 80px;
+}
+
+/* --- Body Text Color -------------------------------------- */
+body {
+  color: #A3A596;
+}
+
+/* --- Selection Color -------------------------------------- */
+::selection {
+  background-color: #C8CEBD;
+  color: #2D3828;
+}

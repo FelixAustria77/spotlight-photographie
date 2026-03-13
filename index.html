@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Spotlight-Photographie – Professionelle Hochzeits-, Event- und Business-Fotografie in Graz, Steiermark. Einfühlsam, authentisch, unvergesslich.">
+  <meta name="robots" content="index, follow">
+  <title>Spotlight-Photographie | Hochzeits- & Business-Fotografie Graz</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Spotlight-Photographie | Fotografie Graz">
+  <meta property="og:description" content="Professionelle Hochzeits-, Event- und Business-Fotografie in Graz, Steiermark.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_AT">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- Tailwind Config (vor CDN laden) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory: {
+              100: '#FAFAF7',
+              200: '#F8F5EF',
+              300: '#F5F2EB',
+              400: '#EDE8DC',
+              500: '#DDD6C8',
+            },
+            olive: {
+              100: '#F0F1EC',
+              200: '#C8CEBD',
+              300: '#A3AC94',
+              400: '#7D8970',
+              500: '#6B7560',
+              600: '#5A6450',
+              700: '#4A5240',
+              800: '#3D4A35',
+              900: '#2D3828',
+            }
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'serif'],
+            body: ['"Jost"', 'sans-serif'],
+          },
+          letterSpacing: {
+            'ultra-wide': '0.3em',
+          },
+          transitionTimingFunction: {
+            'luxury': 'cubic-bezier(0.16, 1, 0.3, 1)',
+          },
+          boxShadow: {
+            'card': '0 2px 20px rgba(45, 56, 40, 0.06)',
+            'card-hover': '0 8px 40px rgba(45, 56, 40, 0.13)',
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JSON-LD LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Spotlight-Photographie",
+    "description": "Professionelle Hochzeits-, Event- und Business-Fotografie in Graz",
+    "url": "",
+    "telephone": "+436776168195",
+    "email": "office@spotlight-photographie.at",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Graz",
+      "addressRegion": "Steiermark",
+      "addressCountry": "AT"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 47.0707,
+      "longitude": 15.4395
+    },
+    "priceRange": "€€€",
+    "serviceArea": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 47.0707,
+        "longitude": 15.4395
+      }
+    }
+  }
+  </script>
+</head>
+
+<body class="bg-ivory-100 text-olive-700 font-body antialiased overflow-x-hidden">
+
+  <!-- ======================================================
+       NAVIGATION
+  ====================================================== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+
+        <!-- Logo -->
+        <a href="#hero" class="flex flex-col leading-none group cursor-pointer" aria-label="Spotlight-Photographie – Startseite">
+          <span class="font-display text-xl font-light tracking-[0.25em] text-ivory-100 uppercase transition-colors duration-200 group-[.scrolled]:text-olive-900" id="logo-primary">Spotlight</span>
+          <span class="font-body text-[10px] tracking-ultra-wide text-ivory-200/70 uppercase transition-colors duration-200 group-[.scrolled]:text-olive-400" id="logo-secondary">Photographie</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <ul class="hidden md:flex items-center gap-8">
+          <li><a href="#leistungen" class="font-body text-xs tracking-[0.2em] uppercase text-ivory-200/80 hover:text-ivory-100 nav-link transition-colors duration-200 cursor-pointer">Leistungen</a></li>
+          <li><a href="#portfolio" class="font-body text-xs tracking-[0.2em] uppercase text-ivory-200/80 hover:text-ivory-100 nav-link transition-colors duration-200 cursor-pointer">Portfolio</a></li>
+          <li><a href="#ueber-mich" class="font-body text-xs tracking-[0.2em] uppercase text-ivory-200/80 hover:text-ivory-100 nav-link transition-colors duration-200 cursor-pointer">Über mich</a></li>
+          <li>
+            <a href="#kontakt" class="font-body text-xs tracking-[0.2em] uppercase border border-ivory-200/60 text-ivory-100/90 px-6 py-2.5 nav-link-btn hover:bg-ivory-100/10 transition-all duration-200 cursor-pointer">
+              Kontakt
+            </a>
+          </li>
+        </ul>
+
+        <!-- Mobile Hamburger -->
+        <button
+          id="menu-toggle"
+          class="md:hidden p-2 text-ivory-100 cursor-pointer"
+          aria-label="Navigation öffnen"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <!-- Hamburger icon -->
+          <svg id="menu-icon-open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <!-- Close icon -->
+          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu" class="md:hidden bg-ivory-100/98 backdrop-blur-md border-t border-ivory-400">
+      <ul class="max-w-7xl mx-auto px-4 py-6 flex flex-col gap-1">
+        <li><a href="#leistungen" class="block font-body text-sm tracking-[0.2em] uppercase text-olive-700 hover:text-olive-900 py-3 px-2 transition-colors duration-200 cursor-pointer">Leistungen</a></li>
+        <li><a href="#portfolio" class="block font-body text-sm tracking-[0.2em] uppercase text-olive-700 hover:text-olive-900 py-3 px-2 transition-colors duration-200 cursor-pointer">Portfolio</a></li>
+        <li><a href="#ueber-mich" class="block font-body text-sm tracking-[0.2em] uppercase text-olive-700 hover:text-olive-900 py-3 px-2 transition-colors duration-200 cursor-pointer">Über mich</a></li>
+        <li class="pt-2">
+          <a href="#kontakt" class="block font-body text-sm tracking-[0.2em] uppercase text-center bg-olive-800 text-ivory-100 py-4 hover:bg-olive-900 transition-colors duration-200 cursor-pointer">
+            Kontakt aufnehmen
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Navbar-Textfarbe wechseln wenn gescrollt (via JS .scrolled Klasse) -->
+  <style>
+    #navbar.scrolled #logo-primary { color: #2D3828; }
+    #navbar.scrolled #logo-secondary { color: #7D8970; }
+    #navbar.scrolled .nav-link { color: #5A6450; }
+    #navbar.scrolled .nav-link:hover { color: #2D3828; }
+    #navbar.scrolled .nav-link-btn {
+      color: #3D4A35;
+      border-color: #A3AC94;
+    }
+    #navbar.scrolled .nav-link-btn:hover {
+      background-color: #3D4A35;
+      color: #FAFAF7;
+    }
+    #navbar.scrolled #menu-toggle { color: #3D4A35; }
+  </style>
+
+
+  <main>
+
+    <!-- ====================================================
+         HERO
+    ==================================================== -->
+    <section id="hero" class="relative h-screen min-h-[600px] max-h-[1080px] overflow-hidden">
+
+      <!-- Background Image -->
+      <!-- PLACEHOLDER: Replace with client hero photo -->
+      <div class="absolute inset-0">
+        <img
+          src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1920&q=85&auto=format&fit=crop"
+          alt="Hochzeitsfotografie Graz – Spotlight-Photographie"
+          class="w-full h-full object-cover object-center"
+          loading="eager"
+          fetchpriority="high"
+        >
+        <!-- Gradient overlays -->
+        <div class="absolute inset-0 bg-gradient-to-b from-olive-900/30 via-olive-900/10 to-ivory-100/60"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-olive-900/40 via-olive-900/10 to-transparent"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="relative z-10 h-full flex flex-col justify-center px-6 sm:px-10 lg:px-16 max-w-7xl mx-auto">
+
+        <!-- Eyebrow -->
+        <p class="font-body text-[10px] tracking-ultra-wide uppercase text-ivory-200/80 mb-6 opacity-0 animate-fade-in" style="animation-delay: 0.2s; animation-fill-mode: forwards;">
+          Graz &nbsp;·&nbsp; Steiermark &nbsp;·&nbsp; Österreich
+        </p>
+
+        <!-- Headline -->
+        <h1 class="font-display font-light text-ivory-100 leading-none mb-4 opacity-0 animate-fade-up"
+            style="font-size: clamp(3rem, 8vw, 7rem); animation-delay: 0.4s; animation-fill-mode: forwards;">
+          Momente,<br>
+          <em class="italic font-extralight" style="font-size: clamp(3.2rem, 8.5vw, 7.5rem);">die bleiben.</em>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="font-body font-light text-ivory-200/90 mt-6 mb-10 opacity-0 animate-fade-up"
+           style="font-size: clamp(0.95rem, 1.5vw, 1.2rem); letter-spacing: 0.12em; animation-delay: 0.65s; animation-fill-mode: forwards;">
+          Hochzeiten &nbsp;·&nbsp; Events &nbsp;·&nbsp; Business-Fotografie
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-up" style="animation-delay: 0.85s; animation-fill-mode: forwards;">
+          <a href="#portfolio" class="inline-flex items-center justify-center px-8 py-4 bg-ivory-100 text-olive-900 font-body text-xs tracking-[0.2em] uppercase hover:bg-white transition-colors duration-200 cursor-pointer min-h-[52px]">
+            Portfolio ansehen
+          </a>
+          <a href="#kontakt" class="inline-flex items-center justify-center px-8 py-4 border border-ivory-200/50 text-ivory-100 font-body text-xs tracking-[0.2em] uppercase hover:bg-ivory-100/10 transition-colors duration-200 cursor-pointer min-h-[52px]">
+            Anfrage stellen
+          </a>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-8 left-1/2 opacity-0 animate-fade-in animate-scroll-bounce" style="animation-delay: 1.3s; animation-fill-mode: forwards;">
+        <svg class="w-5 h-8 text-ivory-200/60" fill="none" viewBox="0 0 20 32" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <rect x="1" y="1" width="18" height="30" rx="9" stroke-opacity="0.5"/>
+          <circle cx="10" cy="9" r="3" fill="currentColor" opacity="0.6"/>
+        </svg>
+      </div>
+    </section>
+
+
+    <!-- ====================================================
+         LEISTUNGEN
+    ==================================================== -->
+    <section id="leistungen" class="py-24 md:py-32 bg-ivory-100 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+
+        <!-- Section Header -->
+        <div class="text-center mb-16 md:mb-20 reveal-on-scroll">
+          <p class="font-body text-[10px] tracking-ultra-wide uppercase text-olive-400 mb-4">Was ich anbiete</p>
+          <h2 class="font-display text-5xl md:text-6xl font-light text-olive-900">Leistungen</h2>
+          <div class="w-12 h-px bg-olive-300 mx-auto mt-6"></div>
+        </div>
+
+        <!-- Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+
+          <!-- Hochzeiten -->
+          <div class="bg-white border border-ivory-400 p-8 lg:p-10 shadow-card hover:shadow-card-hover transition-shadow duration-300 reveal-on-scroll">
+            <div class="w-10 h-10 mb-8 text-olive-500" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+            <h3 class="font-display text-3xl font-light text-olive-900 mb-4">Hochzeiten</h3>
+            <p class="font-body text-sm leading-relaxed text-olive-500 mb-8">
+              Ihr schönster Tag verdient Bilder, die Emotionen und Augenblicke für immer festhalten. Diskret, authentisch und mit einem Blick für das Wesentliche begleite ich Sie durch Ihren besonderen Tag.
+            </p>
+            <a href="#kontakt" class="font-body text-xs tracking-[0.18em] uppercase text-olive-700 border-b border-olive-300 pb-0.5 hover:border-olive-700 hover:text-olive-900 transition-colors duration-200 cursor-pointer">
+              Anfrage stellen
+            </a>
+          </div>
+
+          <!-- Events -->
+          <div class="bg-white border border-ivory-400 p-8 lg:p-10 shadow-card hover:shadow-card-hover transition-shadow duration-300 reveal-on-scroll delay-1">
+            <div class="w-10 h-10 mb-8 text-olive-500" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+                <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/>
+              </svg>
+            </div>
+            <h3 class="font-display text-3xl font-light text-olive-900 mb-4">Events</h3>
+            <p class="font-body text-sm leading-relaxed text-olive-500 mb-8">
+              Von Firmenfeiern über Galas bis hin zu privaten Anlässen – ich halte die Atmosphäre und die besonderen Momente Ihrer Veranstaltung in hochwertigen Bildern fest.
+            </p>
+            <a href="#kontakt" class="font-body text-xs tracking-[0.18em] uppercase text-olive-700 border-b border-olive-300 pb-0.5 hover:border-olive-700 hover:text-olive-900 transition-colors duration-200 cursor-pointer">
+              Anfrage stellen
+            </a>
+          </div>
+
+          <!-- Business -->
+          <div class="bg-white border border-ivory-400 p-8 lg:p-10 shadow-card hover:shadow-card-hover transition-shadow duration-300 reveal-on-scroll delay-2">
+            <div class="w-10 h-10 mb-8 text-olive-500" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+                <line x1="12" y1="12" x2="12" y2="16"/>
+                <line x1="10" y1="14" x2="14" y2="14"/>
+              </svg>
+            </div>
+            <h3 class="font-display text-3xl font-light text-olive-900 mb-4">Business</h3>
+            <p class="font-body text-sm leading-relaxed text-olive-500 mb-8">
+              Professionelle Portraits, Teamfotos und Corporate-Fotografie, die Ihre Marke authentisch repräsentieren. Für LinkedIn, Website und alle Unternehmenskommunikation.
+            </p>
+            <a href="#kontakt" class="font-body text-xs tracking-[0.18em] uppercase text-olive-700 border-b border-olive-300 pb-0.5 hover:border-olive-700 hover:text-olive-900 transition-colors duration-200 cursor-pointer">
+              Anfrage stellen
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================
+         PORTFOLIO
+    ==================================================== -->
+    <section id="portfolio" class="py-24 md:py-32 bg-ivory-300 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+
+        <!-- Section Header -->
+        <div class="text-center mb-12 reveal-on-scroll">
+          <p class="font-body text-[10px] tracking-ultra-wide uppercase text-olive-400 mb-4">Einblicke</p>
+          <h2 class="font-display text-5xl md:text-6xl font-light text-olive-900">Portfolio</h2>
+          <div class="w-12 h-px bg-olive-300 mx-auto mt-6"></div>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex justify-center flex-wrap gap-2 mb-12 reveal-on-scroll">
+          <button class="filter-btn active font-body text-[10px] tracking-[0.2em] uppercase px-6 py-2.5 border transition-all duration-200 cursor-pointer min-h-[44px]" data-filter="all">Alle</button>
+          <button class="filter-btn font-body text-[10px] tracking-[0.2em] uppercase px-6 py-2.5 border border-olive-300 text-olive-600 hover:border-olive-600 transition-all duration-200 cursor-pointer min-h-[44px]" data-filter="hochzeit">Hochzeiten</button>
+          <button class="filter-btn font-body text-[10px] tracking-[0.2em] uppercase px-6 py-2.5 border border-olive-300 text-olive-600 hover:border-olive-600 transition-all duration-200 cursor-pointer min-h-[44px]" data-filter="events">Events</button>
+          <button class="filter-btn font-body text-[10px] tracking-[0.2em] uppercase px-6 py-2.5 border border-olive-300 text-olive-600 hover:border-olive-600 transition-all duration-200 cursor-pointer min-h-[44px]" data-filter="business">Business</button>
+        </div>
+
+        <!-- Masonry Gallery -->
+        <div id="gallery" class="columns-1 sm:columns-2 lg:columns-3 gap-4">
+
+          <!-- HOCHZEIT 1 -->
+          <!-- PLACEHOLDER: Replace with client photo – Hochzeit outdoor -->
+          <div class="gallery-item break-inside-avoid mb-4 overflow-hidden group cursor-pointer" data-category="hochzeit">
+            <div class="relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=600&q=80&auto=format&fit=crop" alt="Hochzeitsfotografie Graz – romantischer Moment" class="w-full h-auto object-cover transition-transform duration-500 ease-luxury group-hover:scale-105" loading="lazy">
+              <div class="absolute inset-0 bg-olive-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                <span class="font-display text-lg font-light text-ivory-100 italic">Hochzeiten</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- EVENTS 1 -->
+          <!-- PLACEHOLDER: Replace with client photo – Event indoor -->
+          <div class="gallery-item break-inside-avoid mb-4 overflow-hidden group cursor-pointer" data-category="events">
+            <div class="relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80&auto=format&fit=crop" alt="Eventfotografie Graz – Gala Abend" class="w-full h-auto object-cover transition-transform duration-500 ease-luxury group-hover:scale-105" loading="lazy">
+              <div class="absolute inset-0 bg-olive-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                <span class="font-display text-lg font-light text-ivory-100 italic">Events</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- BUSINESS 1 -->
+          <!-- PLACEHOLDER: Replace with client photo – Business Portrait -->
+          <div class="gallery-item break-inside-avoid mb-4 overflow-hidden group cursor-pointer" data-category="business">
+            <div class="relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80&auto=format&fit=crop" alt="Business Fotografie Graz – Professionelles Portrait" class="w-full h-auto object-cover transition-transform duration-500 ease-luxury group-hover:scale-105" loading="lazy">
+              <div class="absolute inset-0 bg-olive-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                <span class="font-display text-lg font-light text-ivory-100 italic">Business</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- HOCHZEIT 2 -->
+          <!-- PLACEHOLDER: Replace with client photo – Hochzeit Kirche -->
+          <div class="gallery-item break-inside-avoid mb-4 overflow-hidden group cursor-pointer" data-category="hochzeit">
+            <div class="relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600&q=80&auto=format&fit=crop" alt="Hochzeitsfotografie Steiermark – Kirchliche Trauung" class="w-full h-auto object-cover transition-transform duration-500 ease-luxury group-hover:scale-105" loading="lazy">
+              <div class="absolute inset-0 bg-olive-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                <span class="font-display text-lg font-light text-ivory-100 italic">Hochzeiten</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- BUSINESS 2 -->
+          <!-- PLACEHOLDER: Replace with client photo – Team Foto -->
+          <div class="gallery-item break-inside-avoid mb-4 overflow-hidden group cursor-pointer" data-category="business">
+            <div class="relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80&auto=format&fit=crop" alt="Business Fotografie Graz – Team Meeting" class="w-full h-auto object-cover transition-transform duration-500 ease-luxury group-hover:scale-105" loading="lazy">
+              <div class="absolute inset-0 bg-olive-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                <span class="font-display text-lg font-light text-ivory-100 italic">Business</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- EVENTS 2 -->
+          <!-- PLACEHOLDER: Replace with client photo – Event Feier -->
+          <div class="gallery-item break-inside-avoid mb-4 overflow-hidden group cursor-pointer" data-category="events">
+            <div class="relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80&auto=format&fit=crop" alt="Eventfotografie Steiermark – Firmenfeier" class="w-full h-auto object-cover transition-transform duration-500 ease-luxury group-hover:scale-105" loading="lazy">
+              <div class="absolute inset-0 bg-olive-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                <span class="font-display text-lg font-light text-ivory-100 italic">Events</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- HOCHZEIT 3 -->
+          <!-- PLACEHOLDER: Replace with client photo – Hochzeit Details -->
+          <div class="gallery-item break-inside-avoid mb-4 overflow-hidden group cursor-pointer" data-category="hochzeit">
+            <div class="relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1550005809-91ad75fb315f?w=600&q=80&auto=format&fit=crop" alt="Hochzeitsfotografie Graz – Details und Dekorationen" class="w-full h-auto object-cover transition-transform duration-500 ease-luxury group-hover:scale-105" loading="lazy">
+              <div class="absolute inset-0 bg-olive-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                <span class="font-display text-lg font-light text-ivory-100 italic">Hochzeiten</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- BUSINESS 3 -->
+          <!-- PLACEHOLDER: Replace with client photo – Portrait Studio -->
+          <div class="gallery-item break-inside-avoid mb-4 overflow-hidden group cursor-pointer" data-category="business">
+            <div class="relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&auto=format&fit=crop" alt="Business Portrait Graz – Headshot Studio" class="w-full h-auto object-cover transition-transform duration-500 ease-luxury group-hover:scale-105" loading="lazy">
+              <div class="absolute inset-0 bg-olive-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                <span class="font-display text-lg font-light text-ivory-100 italic">Business</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- EVENTS 3 -->
+          <!-- PLACEHOLDER: Replace with client photo – Konzert / Show -->
+          <div class="gallery-item break-inside-avoid mb-4 overflow-hidden group cursor-pointer" data-category="events">
+            <div class="relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600&q=80&auto=format&fit=crop" alt="Event Fotografie – Bühnenshow Graz" class="w-full h-auto object-cover transition-transform duration-500 ease-luxury group-hover:scale-105" loading="lazy">
+              <div class="absolute inset-0 bg-olive-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                <span class="font-display text-lg font-light text-ivory-100 italic">Events</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- HOCHZEIT 4 -->
+          <!-- PLACEHOLDER: Replace with client photo – Brautpaar Portrait -->
+          <div class="gallery-item break-inside-avoid mb-4 overflow-hidden group cursor-pointer" data-category="hochzeit">
+            <div class="relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&q=80&auto=format&fit=crop" alt="Hochzeitsfotografie Graz – Brautpaar Portrait" class="w-full h-auto object-cover transition-transform duration-500 ease-luxury group-hover:scale-105" loading="lazy">
+              <div class="absolute inset-0 bg-olive-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                <span class="font-display text-lg font-light text-ivory-100 italic">Hochzeiten</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- BUSINESS 4 -->
+          <!-- PLACEHOLDER: Replace with client photo – Büro Atmosphäre -->
+          <div class="gallery-item break-inside-avoid mb-4 overflow-hidden group cursor-pointer" data-category="business">
+            <div class="relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80&auto=format&fit=crop" alt="Business Fotografie – Büroatmosphäre Graz" class="w-full h-auto object-cover transition-transform duration-500 ease-luxury group-hover:scale-105" loading="lazy">
+              <div class="absolute inset-0 bg-olive-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                <span class="font-display text-lg font-light text-ivory-100 italic">Business</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- EVENTS 4 -->
+          <!-- PLACEHOLDER: Replace with client photo – Networking Event -->
+          <div class="gallery-item break-inside-avoid mb-4 overflow-hidden group cursor-pointer" data-category="events">
+            <div class="relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80&auto=format&fit=crop" alt="Event Fotografie Graz – Networking" class="w-full h-auto object-cover transition-transform duration-500 ease-luxury group-hover:scale-105" loading="lazy">
+              <div class="absolute inset-0 bg-olive-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                <span class="font-display text-lg font-light text-ivory-100 italic">Events</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- CTA unter Gallery -->
+        <div class="text-center mt-12 reveal-on-scroll">
+          <a href="#kontakt" class="inline-flex items-center justify-center px-10 py-4 border border-olive-700 text-olive-800 font-body text-xs tracking-[0.2em] uppercase hover:bg-olive-800 hover:text-ivory-100 transition-all duration-200 cursor-pointer min-h-[52px]">
+            Ihre Anfrage stellen
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ====================================================
+         ÜBER MICH
+    ==================================================== -->
+    <section id="ueber-mich" class="py-24 md:py-32 bg-ivory-100 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+          <!-- Foto -->
+          <div class="relative about-frame reveal-on-scroll">
+            <!-- PLACEHOLDER: Replace with photographer portrait -->
+            <img
+              src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=700&q=85&auto=format&fit=crop&crop=face"
+              alt="Spotlight-Photographie – Fotograf in Graz"
+              class="w-full h-[480px] md:h-[580px] object-cover object-top"
+              loading="lazy"
+            >
+          </div>
+
+          <!-- Text -->
+          <div class="reveal-on-scroll delay-2">
+            <p class="font-body text-[10px] tracking-ultra-wide uppercase text-olive-400 mb-6">Über mich</p>
+            <h2 class="font-display text-5xl md:text-6xl font-light text-olive-900 leading-tight mb-6">
+              Licht einfangen,<br>
+              <em class="italic font-extralight">Seelen berühren.</em>
+            </h2>
+            <div class="w-10 h-px bg-olive-300 mb-8"></div>
+
+            <div class="space-y-5 font-body text-base leading-relaxed text-olive-600">
+              <p>
+                Ich bin Ronald Erkenger, Fotograf aus Graz. Seit 6 Jahren begleite ich Menschen in ihren bedeutendsten Momenten – von der stillen Emotion eines Hochzeitsblicks bis zum selbstsicheren Auftreten im Business-Portrait.
+              </p>
+              <p>
+                Meine Arbeit lebt von Natürlichkeit und Authentizität. Ich schaffe keine gestellten Bilder – ich erzähle Ihre Geschichte, so wie sie wirklich ist. Mit einem sensiblen Auge für Details und einem Gespür für den richtigen Moment.
+              </p>
+              <p>
+                Als in Graz beheimateter Fotograf kenne ich die schönsten Locations der Steiermark – von historischen Schlössern über romantische Weingärten bis hin zu modernen Stadträumen.
+              </p>
+            </div>
+
+            <!-- Signatur -->
+            <div class="mt-10 pt-8 border-t border-ivory-400">
+              <p class="font-display text-3xl font-light italic text-olive-700">Ronald Erkenger</p>
+              <p class="font-body text-[10px] tracking-ultra-wide uppercase text-olive-400 mt-2">
+                Spotlight-Photographie &nbsp;·&nbsp; Graz, Steiermark
+              </p>
+            </div>
+
+            <div class="mt-8">
+              <a href="#kontakt" class="inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase text-olive-700 hover:text-olive-900 transition-colors duration-200 cursor-pointer group">
+                <span>Kennenlernen</span>
+                <svg class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================
+         KONTAKT
+    ==================================================== -->
+    <section id="kontakt" class="py-24 md:py-32 bg-ivory-300 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+
+        <!-- Section Header -->
+        <div class="text-center mb-16 reveal-on-scroll">
+          <p class="font-body text-[10px] tracking-ultra-wide uppercase text-olive-400 mb-4">Kontakt aufnehmen</p>
+          <h2 class="font-display text-5xl md:text-6xl font-light text-olive-900">
+            Lassen Sie uns<br>
+            <em class="italic font-extralight">reden.</em>
+          </h2>
+          <div class="w-12 h-px bg-olive-300 mx-auto mt-6"></div>
+          <p class="font-body text-sm text-olive-500 mt-6 max-w-md mx-auto leading-relaxed">
+            Ich freue mich auf Ihre Anfrage und antworte in der Regel innerhalb von 24 Stunden.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
+
+          <!-- Kontaktdaten (2/5) -->
+          <div class="lg:col-span-2 space-y-8 reveal-on-scroll">
+
+            <!-- Telefon -->
+            <div class="flex items-start gap-5">
+              <div class="flex-shrink-0 w-10 h-10 text-olive-400 mt-1" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.08 6.08l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="font-body text-[10px] tracking-ultra-wide uppercase text-olive-400 mb-1">Telefon</p>
+                <a href="tel:+436776168195" class="font-body text-lg text-olive-800 hover:text-olive-900 transition-colors duration-200 cursor-pointer">
+                  +43 677 616 81 925
+                </a>
+              </div>
+            </div>
+
+            <!-- E-Mail -->
+            <div class="flex items-start gap-5">
+              <div class="flex-shrink-0 w-10 h-10 text-olive-400 mt-1" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div>
+                <p class="font-body text-[10px] tracking-ultra-wide uppercase text-olive-400 mb-1">E-Mail</p>
+                <a href="mailto:office@spotlight-photographie.at" class="font-body text-base text-olive-800 hover:text-olive-900 transition-colors duration-200 cursor-pointer break-all">
+                  office@spotlight-photographie.at
+                </a>
+              </div>
+            </div>
+
+            <!-- Standort -->
+            <div class="flex items-start gap-5">
+              <div class="flex-shrink-0 w-10 h-10 text-olive-400 mt-1" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div>
+                <p class="font-body text-[10px] tracking-ultra-wide uppercase text-olive-400 mb-1">Standort</p>
+                <p class="font-body text-lg text-olive-800">Graz, Steiermark<br>
+                  <span class="text-olive-500 text-base">Österreich</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Trennlinie -->
+            <div class="border-t border-ivory-400 pt-8">
+              <p class="font-display text-xl font-light italic text-olive-500 leading-relaxed">
+                „Jede Anfrage ist der erste Schritt zu unvergesslichen Bildern."
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Kontaktformular (3/5) -->
+          <form
+            id="contact-form"
+            class="lg:col-span-3 bg-white border border-ivory-400 p-8 lg:p-10 shadow-card reveal-on-scroll delay-2"
+            novalidate
+            aria-label="Kontaktformular"
+          >
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+              <!-- Name -->
+              <div class="form-field">
+                <label for="name" class="block font-body text-[10px] tracking-[0.2em] uppercase text-olive-500 mb-2">Name <span class="text-olive-400" aria-label="Pflichtfeld">*</span></label>
+                <input
+                  type="text" id="name" name="name" required autocomplete="name"
+                  class="w-full px-4 py-3 bg-ivory-100 border border-ivory-400 font-body text-sm text-olive-800 placeholder-olive-300 transition-colors duration-200 min-h-[48px]"
+                  placeholder="Ihr vollständiger Name"
+                >
+              </div>
+              <!-- E-Mail -->
+              <div class="form-field">
+                <label for="email" class="block font-body text-[10px] tracking-[0.2em] uppercase text-olive-500 mb-2">E-Mail <span class="text-olive-400" aria-label="Pflichtfeld">*</span></label>
+                <input
+                  type="email" id="email" name="email" required autocomplete="email"
+                  class="w-full px-4 py-3 bg-ivory-100 border border-ivory-400 font-body text-sm text-olive-800 placeholder-olive-300 transition-colors duration-200 min-h-[48px]"
+                  placeholder="ihre@email.at"
+                >
+              </div>
+            </div>
+
+            <!-- Art der Anfrage -->
+            <div class="mb-6">
+              <label for="service" class="block font-body text-[10px] tracking-[0.2em] uppercase text-olive-500 mb-2">Art der Anfrage</label>
+              <select
+                id="service" name="service"
+                class="w-full px-4 py-3 bg-ivory-100 border border-ivory-400 font-body text-sm text-olive-800 transition-colors duration-200 min-h-[48px] appearance-none cursor-pointer"
+                style="background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236B7560'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E\"); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1.2rem; padding-right: 3rem;"
+              >
+                <option value="">Bitte wählen…</option>
+                <option value="hochzeit">Hochzeit</option>
+                <option value="event">Event / Veranstaltung</option>
+                <option value="business">Business-Fotografie</option>
+                <option value="portrait">Portrait-Shooting</option>
+                <option value="sonstiges">Sonstiges</option>
+              </select>
+            </div>
+
+            <!-- Datum (optional) -->
+            <div class="mb-6">
+              <label for="date" class="block font-body text-[10px] tracking-[0.2em] uppercase text-olive-500 mb-2">
+                Gewünschtes Datum
+                <span class="font-body text-[9px] normal-case tracking-normal text-olive-400 ml-2">(optional)</span>
+              </label>
+              <input
+                type="date" id="date" name="date"
+                class="w-full px-4 py-3 bg-ivory-100 border border-ivory-400 font-body text-sm text-olive-800 transition-colors duration-200 min-h-[48px] cursor-pointer"
+              >
+            </div>
+
+            <!-- Nachricht -->
+            <div class="mb-8">
+              <label for="message" class="block font-body text-[10px] tracking-[0.2em] uppercase text-olive-500 mb-2">Ihre Nachricht <span class="text-olive-400" aria-label="Pflichtfeld">*</span></label>
+              <textarea
+                id="message" name="message" rows="5" required
+                class="w-full px-4 py-3 bg-ivory-100 border border-ivory-400 font-body text-sm text-olive-800 placeholder-olive-300 transition-colors duration-200 resize-none"
+                placeholder="Erzählen Sie mir von Ihrem Anlass, Ihren Wünschen und Vorstellungen…"
+              ></textarea>
+            </div>
+
+            <!-- Submit -->
+            <button
+              type="submit"
+              id="submit-btn"
+              class="w-full py-4 bg-olive-800 text-ivory-100 font-body text-xs tracking-[0.2em] uppercase hover:bg-olive-900 transition-colors duration-200 cursor-pointer min-h-[52px] disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Nachricht senden
+            </button>
+
+            <!-- Status -->
+            <div id="form-status" class="hidden mt-4 text-center font-body text-sm"></div>
+
+            <p class="mt-4 font-body text-xs text-olive-400 text-center">
+              Felder mit * sind Pflichtfelder
+            </p>
+
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ======================================================
+       FOOTER
+  ====================================================== -->
+  <footer class="bg-olive-900 text-ivory-200 py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+
+        <!-- Brand -->
+        <div>
+          <p class="font-display text-2xl font-light tracking-[0.25em] text-ivory-100 uppercase">Spotlight</p>
+          <p class="font-body text-[10px] tracking-ultra-wide text-ivory-200/50 uppercase mt-1">Photographie</p>
+          <p class="font-body text-sm text-ivory-200/50 mt-5 leading-relaxed">
+            Professionelle Fotografie<br>
+            in Graz, Steiermark, Österreich.
+          </p>
+        </div>
+
+        <!-- Navigation -->
+        <nav aria-label="Footer Navigation">
+          <p class="font-body text-[10px] tracking-ultra-wide uppercase text-ivory-200/40 mb-5">Navigation</p>
+          <ul class="space-y-3">
+            <li><a href="#leistungen" class="font-body text-sm text-ivory-200/60 hover:text-ivory-100 transition-colors duration-200 cursor-pointer">Leistungen</a></li>
+            <li><a href="#portfolio" class="font-body text-sm text-ivory-200/60 hover:text-ivory-100 transition-colors duration-200 cursor-pointer">Portfolio</a></li>
+            <li><a href="#ueber-mich" class="font-body text-sm text-ivory-200/60 hover:text-ivory-100 transition-colors duration-200 cursor-pointer">Über mich</a></li>
+            <li><a href="#kontakt" class="font-body text-sm text-ivory-200/60 hover:text-ivory-100 transition-colors duration-200 cursor-pointer">Kontakt</a></li>
+          </ul>
+        </nav>
+
+        <!-- Kontakt -->
+        <div>
+          <p class="font-body text-[10px] tracking-ultra-wide uppercase text-ivory-200/40 mb-5">Kontakt</p>
+          <div class="space-y-3">
+            <a href="tel:+436776168195" class="block font-body text-sm text-ivory-200/70 hover:text-ivory-100 transition-colors duration-200 cursor-pointer">
+              +43 677 616 81 925
+            </a>
+            <a href="mailto:office@spotlight-photographie.at" class="block font-body text-sm text-ivory-200/70 hover:text-ivory-100 transition-colors duration-200 cursor-pointer break-all">
+              office@spotlight-photographie.at
+            </a>
+            <p class="font-body text-sm text-ivory-200/50">
+              Graz, Steiermark
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-ivory-200/10 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="font-body text-xs text-ivory-200/30">
+          © 2025 Spotlight-Photographie. Alle Rechte vorbehalten.
+        </p>
+        <div class="flex gap-6">
+          <a href="#" class="font-body text-xs text-ivory-200/30 hover:text-ivory-200/70 transition-colors duration-200 cursor-pointer">Impressum</a>
+          <a href="#" class="font-body text-xs text-ivory-200/30 hover:text-ivory-200/70 transition-colors duration-200 cursor-pointer">Datenschutz</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ======================================================
+       LIGHTBOX
+  ====================================================== -->
+  <div
+    id="lightbox"
+    class="fixed inset-0 z-[200] bg-olive-900/97 items-center justify-center p-4"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Bildvorschau"
+  >
+    <!-- Close -->
+    <button
+      id="lightbox-close"
+      class="absolute top-4 right-4 w-12 h-12 flex items-center justify-center text-ivory-200/70 hover:text-ivory-100 transition-colors duration-200 cursor-pointer z-10"
+      aria-label="Schließen"
+    >
+      <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+
+    <!-- Prev -->
+    <button
+      id="lightbox-prev"
+      class="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center text-ivory-200/70 hover:text-ivory-100 transition-colors duration-200 cursor-pointer z-10"
+      aria-label="Vorheriges Bild"
+    >
+      <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+      </svg>
+    </button>
+
+    <!-- Image -->
+    <div class="flex flex-col items-center justify-center w-full h-full">
+      <img
+        id="lightbox-img"
+        src=""
+        alt=""
+        class="max-w-full max-h-[85vh] object-contain shadow-2xl"
+      >
+      <p id="lightbox-caption" class="font-display text-base font-light italic text-ivory-200/60 mt-4 text-center"></p>
+    </div>
+
+    <!-- Next -->
+    <button
+      id="lightbox-next"
+      class="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center text-ivory-200/70 hover:text-ivory-100 transition-colors duration-200 cursor-pointer z-10"
+      aria-label="Nächstes Bild"
+    >
+      <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+      </svg>
+    </button>
+  </div>
+
+
+  <!-- JavaScript -->
+  <script src="js/main.js" defer></script>
+
+</body>
+</html>
